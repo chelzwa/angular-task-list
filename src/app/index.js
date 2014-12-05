@@ -5,16 +5,15 @@ angular.module('code', ['ui.router', 'ui.bootstrap'])
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'app/main/tasks.html',
+        controller: 'TasksCtrl as tasks'
       })
-      .state('taskPage', {
+      .state('details', {
         url: '/task/:id',
-        templateUrl: 'app/main/task.html',
-        controller: 'TaskCtrl'
+        templateUrl: 'app/main/task.details.html',
+        controller: 'Details as details'
       });
 
 
     $urlRouterProvider.otherwise('/');
-  })
-;
+  });
