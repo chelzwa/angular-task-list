@@ -12,7 +12,6 @@
 
   <div ng-repeat="task in taskList.getTasks()" ng-click="taskList.taskClicked(task.name)">
     <a ui-sref='taskPage({id: task.id})'><h4>{{task.name}}</h4></a>
-    <!--<h5>{{task.description}}</h5>-->
   </div>
 
   <hr>
