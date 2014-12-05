@@ -9,7 +9,7 @@ angular.module('code', ['ui.router', 'ui.bootstrap'])
         controller: 'MainCtrl'
       })
       .state('taskPage', {
-        url: '/task',
+        url: '/task:id',
         templateUrl: 'app/main/task.html',
         controller: 'TaskCtrl'
       });
