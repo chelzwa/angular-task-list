@@ -4,16 +4,15 @@
   
   <h1>To Do List</h1>
   
-  <form ng-submit="addTask()">
+  <form ng-submit="taskList.addTask(tName, tDescription)">
     Task name: <input type="text" ng-model="tName" name="tName"><br>
     Task description: <input type="text" ng-model="tDescription" name="tDescription"><br>
     <input type="submit" value="Add Task">
   </form>
 
-  <div ng-repeat="task in tasks" ng-click="taskClicked(task)">
-    <h4>{{task.name}}</h4>
-    <h5>{{task.description}}</h5>
-    <a ui-sref="task"><h4>{{task.name}}</h4></a>
+  <div ng-repeat="task in taskList.getTasks()" ng-click="taskList.taskClicked(task.name)">
+    <a ui-sref='taskPage'><h4>{{task.name}}</h4></a>
+    <!--<h5>{{task.description}}</h5>-->
   </div>
 
   <hr>

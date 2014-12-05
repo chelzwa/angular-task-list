@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('code')
-  .controller('TaskCtrl', function ($scope) {
-    
+  .controller('TaskCtrl', function ($scope, taskList) {
+    $scope.taskList = taskList;
   });
