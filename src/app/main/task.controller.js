@@ -6,4 +6,4 @@ angular.module('code').controller('TaskCtrl', [
 	'$stateParams',
 function ($scope, taskList, $stateParams) {
   $scope.taskToDisplay = taskList.getTask($stateParams.id);
-}});
+}]);
