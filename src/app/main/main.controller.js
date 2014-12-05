@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('code')
-  .controller('MainCtrl', function ($scope, taskList, $stateParams) {
+  .controller('MainCtrl', function ($scope, taskList) {
     $scope.taskList = taskList;
   });
