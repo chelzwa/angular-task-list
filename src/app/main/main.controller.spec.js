@@ -1,22 +1,46 @@
 'use strict';
 
-describe('controllers', function(){
+describe('TasksCtrl', function(){
   var scope;
 
   beforeEach(module('code'));
 
-  beforeEach(inject(function($rootScope) {
+  beforeEach(angular.mock.inject(function($rootScope, $controller){
   	scope = $rootScope.$new();
+    $controller('TasksCtrl as tasks', {$scope: scope});
   }));
 
-  it('should define more than 5 awesome things', inject(function($controller) {
-    expect(scope.awesomeThings).toBeUndefined();
+  it('should have a defined scope as a child on the root scope', function(){
+    expect(scope.tasks).not.toBeUndefined();
+  });
+  it('should have a pointer to the taskData service', function(){
+    expect(scope.tasks.taskData).not.toBeUndefined();
+    var taskList = scope.tasks.taskData.getTasks();
+    expect(taskList).not.toBeUndefined();
+    expect(angular.isArray(taskList)).toBeTruthy();
+  });
+  it('should have an arary of tasks from taskData', function(){
+    var taskList = scope.tasks.taskData.getTasks();
+    expect(taskList).not.toBeUndefined();
+    expect(angular.isArray(taskList)).toBeTruthy();
+  });
+});
 
-    $controller('MainCtrl', {
-      $scope: scope
-  	});
+describe('Details', function(){
+  var scope;
 
-    expect(angular.isArray(scope.awesomeThings)).toBeTruthy();
-    expect(scope.awesomeThings.length > 5).toBeTruthy();
+  beforeEach(module('code'));
+
+  beforeEach(angular.mock.inject(function($rootScope, $controller){
+    scope = $rootScope.$new();
+    $controller('Details as details', {$scope: scope});
   }));
+
+  it('should have a defined scope as a child on the root scope', function(){
+    expect(scope.details).not.toBeUndefined();
+  });
+  
+  it('should know which task was clicked on', function(){
+    expect(scope.details).not.toBeUndefined();
+  });
 });
