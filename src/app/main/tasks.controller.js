@@ -15,7 +15,6 @@ function ($scope, taskData, $templateCache, $http) {
       $scope.method = 'GET';
       $scope.url = 'http://requestb.in/1h2oe8j1';
 
-//POST
       $http({method: 'POST', url: $scope.url, data: 'hello world!', 
       	headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
         .success(function(data, status) {
@@ -24,9 +23,6 @@ function ($scope, taskData, $templateCache, $http) {
         .error(function(data, status) {
           console.log("failed");
         });
-
-//GET
-/*
       $http({method: $scope.method, url: $scope.url, cache: $templateCache})
         .success(function(data, status) {
           $scope.status = status;
@@ -36,8 +32,5 @@ function ($scope, taskData, $templateCache, $http) {
           $scope.data = data || "Request failed";
           $scope.status = status;
         });
-*/
     };
-
-    //$http.get('http://requestb.in/1h2oe8j1');
 }]);

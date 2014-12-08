@@ -3,7 +3,6 @@
 describe('TasksCtrl', function() {
    var $httpBackend, $rootScope, createController, authRequestHandler, tasksCtrl;
 
-   // Set up the module
    beforeEach(module('code'));
 
    beforeEach(inject(function($injector) {
@@ -18,9 +17,10 @@ describe('TasksCtrl', function() {
      $httpBackend.verifyNoOutstandingRequest();
    });
 
-   it('should receive a POST request', function() {
+   it('should receive a POST request and a GET request when fetch is called', function() {
      $rootScope.fetch();
      $httpBackend.expect('POST', 'http://requestb.in/1h2oe8j1').respond(201, '');
+     $httpBackend.expect('GET', 'http://requestb.in/1h2oe8j1').respond(201, '');
      $httpBackend.flush();
    });
 });
