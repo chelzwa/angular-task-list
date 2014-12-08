@@ -1,23 +1,19 @@
 angular.module('code').service('taskData', function(){
-	var tasks = [];
+	this.tasks = [];
 
 	this.addTask = function(name, description) {
     var newTask = {
         'name': name,
         'description': description,
-        'id': tasks.length
+        'id': this.tasks.length
     };
-    tasks.push(newTask);
+    this.tasks.push(newTask);
     return newTask;
-  };
-
-  this.getTasks = function() {
-    return tasks;
   };
 
   this.getTask = function(id){
     var taskClicked;
-    tasks.forEach(function(task){
+    this.tasks.forEach(function(task){
       if(task.id == id){
         taskClicked = task;
       }

@@ -10,9 +10,13 @@
     <input type="submit" value="Add Task">
   </form>
 
-  <div ng-repeat="task in tasks.taskData.getTasks()" ng-click="tasks.taskData.taskClicked(task.name)">
+  <div ng-repeat="task in tasks.taskData.tasks" ng-click="tasks.taskData.tasks">
     <a ui-sref='details({id: task.id})'><h4>{{task.name}}</h4></a>
   </div>
+ 
+  <button ng-click="fetch()">Test Fetch Button</button>
+  {{data}}
+  {{response}}
 
   <hr>
 </div>

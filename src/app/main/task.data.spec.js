@@ -11,15 +11,13 @@ describe('taskData', function(){
   	taskData.addTestTasks(5);
   }));
 
-  it('should be able to return a list of tasks', function(){
-  	var tasks = taskData.getTasks();
-  	expect(tasks).not.toBeUndefined();
+  it('should hold a list of tasks', function(){
+  	expect(taskData.tasks).not.toBeUndefined();
   });
 
   it('should start with 5 tasks', function(){
-  	var tasks = taskData.getTasks();
-  	expect(tasks).not.toBeUndefined();
-  	expect(tasks.length).toBe(5);
+  	expect(taskData.tasks).not.toBeUndefined();
+  	expect(taskData.tasks.length).toBe(5);
   });
 
   it('should be able to add another task', function(){
