@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div ng-include="'components/navbar/navbar.html'"></div>
+  
+  <h1>To Do List</h1>
+  
+  <form ng-submit="tasks.taskData.addTask(tasks.name, tasks.description)">
+    Task name: <input type="text" ng-model="tasks.name"><br>
+    Task description: <input type="text" ng-model="tasks.description"><br>
+    <input type="submit" value="Add Task">
+  </form>
+
+  <div ng-repeat="task in tasks.taskData.getTasks()" ng-click="tasks.taskData.taskClicked(task.name)">
+    <a ui-sref='details({id: task.id})'><h4>{{task.name}}</h4></a>
+  </div>
+
+  <hr>
+</div>
