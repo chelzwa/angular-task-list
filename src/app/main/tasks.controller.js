@@ -7,7 +7,7 @@ angular.module('code').controller('TasksCtrl', [
 	'$http',
 function ($scope, taskData, $templateCache, $http) {
 	var tasks = this;
-    tasks.taskData = taskData;
+  tasks.taskData = taskData;
 
     $scope.fetch = function(){
       $scope.code = null;
